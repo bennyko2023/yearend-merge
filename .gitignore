@@ -1,0 +1,34 @@
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+build/
+dist/
+
+# Virtual environments and local env files
+.venv/
+env/
+venv/
+.env
+.env.*
+
+# Editor settings
+.vscode/
+.idea/
+
+# Generated runtime artifacts
+artifacts/
+out_reports/
+
+# Archives and temporary files
+*.zip
+*.tmp
+*.log
+*.bak
+
+# OS-specific clutter
+.DS_Store
+Thumbs.db
