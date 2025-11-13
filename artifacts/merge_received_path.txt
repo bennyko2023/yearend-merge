@@ -1,0 +1,2 @@
+raw folder_path: C:\data\new 2526 Philip Sharing - Copy\year end\test\報告 friday
+resolved base_path: C:\data\new 2526 Philip Sharing - Copy\year end\test\報告 friday

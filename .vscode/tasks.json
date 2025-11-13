@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run: uvicorn --reload",
+      "type": "shell",
+      "command": "uvicorn app:app --reload --host 127.0.0.1 --port 8000",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

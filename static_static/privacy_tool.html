@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Year-End FastAPI + EXE — Step 1</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; margin: 24px; line-height: 1.6; }
+    header { margin-bottom: 16px; }
+    textarea { width: 100%; min-height: 200px; }
+    label { font-weight: 600; }
+    .row { margin: 12px 0; }
+    .btn { padding: 10px 16px; border: 0; border-radius: 8px; cursor: pointer; }
+    .btn-primary { background: #2563eb; color: #fff; }
+    .muted { opacity: 0.7; font-size: 0.9em; }
+    pre { background: rgba(127,127,127,.12); padding: 12px; border-radius: 8px; overflow: auto; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 960px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    input[type="text"], select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid rgba(127,127,127,.4); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year-End FastAPI + EXE（Step 1）</h1>
+    <p class="muted">此版本僅用於連通性測試：前端可送出表單，後端 <code>/merge</code> 回傳接收結果（尚未進行 .docx 處理）。</p>
+  </header>
+
+  <section class="grid">
+    <div>
+      <div class="row">
+        <label for="pass">解密密碼（僅示意，Step 1 不做解密）：</label>
+        <input id="pass" type="text" placeholder="不會送到伺服器（示意欄位）" />
+      </div>
+
+      <div class="row">
+        <label for="suggestions">已解密 TXT 內容（兩行一位學生）：</label>
+        <textarea id="suggestions" placeholder="ENC:xxxxxxx&#10;（在此貼上純文字內容，Step 1 會回傳前 300 字預覽）"></textarea>
+      </div>
+
+      <div class="row">
+        <label for="folder_path">folder_path（本機路徑，僅文字示意）：</label>
+        <input id="folder_path" type="text" placeholder="例如：C:\Reports 或 /Users/you/Documents/reports" />
+      </div>
+
+      <div class="row">
+        <label for="mode">mode：</label>
+        <select id="mode">
+          <option value="append" selected>append</option>
+          <option value="replace">replace</option>
+          <option value="dryrun">dryrun</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <button id="btn-merge" class="btn btn-primary">送出到 /merge</button>
+      </div>
+    </div>
+
+    <div>
+      <h3>伺服器回應</h3>
+      <pre id="resp">{ 尚未送出 }</pre>
+    </div>
+  </section>
+
+  <script src="jszip.min.js"></script>
+  <script src="privacy_tool.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <title>Year-End Merge Tool (Step 3 Placeholder)</title>
+</head>
+<body>
+  <h1>Year-End Merge Tool — Step 3</h1>
+  <p>這是最小示範頁。建議改用你既有的 <code>privacy_tool.html</code> 與 <code>privacy_tool.js</code>。</p>
+  <form id="form" method="post" action="/merge" enctype="multipart/form-data">
+    <div>
+      <label>Decrypted TXT（兩行一位學生）：</label>
+      <input type="file" name="suggestions" required />
+    </div>
+    <div>
+      <label>Folder Path（遞迴掃描 .docx）：</label>
+      <input type="text" name="folder_path" placeholder="C:\\data\\reports" required />
+    </div>
+    <div>
+      <label>Mode：</label>
+      <select name="mode">
+        <option value="append">append</option>
+        <option value="replace">replace</option>
+        <option value="dryrun">dryrun</option>
+      </select>
+    </div>
+    <button type="submit">送出到 /merge</button>
+  </form>
+</body>
+</html>
